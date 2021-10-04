@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+
+{% block title %}
+index
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-striped">
+  <thead>
+    <th>Name</th>
+    <th>Price</th>
+  </thead>
+  <tbody>
+    {% for itemin in item %}
+    <tr>
+      <td>{{itemin.name}}</td>
+      <td>{{itemin.price}}</td>
+    </tr>
+    {% endfor %}
+
+  <tfoot>
+    <td colspan="4"></td>
+    <td>All natural !</td>
+  </tfoot>
+  </tbody>
+</table>
+{% endblock %}
