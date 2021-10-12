@@ -5,23 +5,29 @@ index
 {% endblock %}
 
 {% block main %}
-
 <table class="table table-striped">
   <thead>
     <th>Name</th>
-    <th>Price</th>
+    <th>Price $</th>
   </thead>
   <tbody>
     {% for itemin in item %}
+    {% if "Jam" in itemin.name %}
     <tr>
-      <td>{{itemin.name}}</td>
+      <td>{{itemin.name}} Jar</td>
       <td>{{itemin.price}}</td>
     </tr>
+    {% else %}
+    <tr>
+      <td>{{itemin.name}} Gallon</td>
+      <td>{{itemin.price}}</td>
+    </tr>
+    {% endif %}
     {% endfor %}
 
   <tfoot>
     <td colspan="4"></td>
-    <td>All natural !</td>
+    <td>All Natural !</td>
   </tfoot>
   </tbody>
 </table>

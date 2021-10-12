@@ -4,15 +4,13 @@
 bill
 {% endblock %}
 
-
-
 {% block main %}
 
 <table class="table table-striped">
   <thead>
     <th>Name</th>
     <th>Quantity</th>
-    <th>Price</th>
+    <th>Price $</th>
   </thead>
   <tbody>
     {% for stockmin in stock %}
@@ -24,8 +22,7 @@ bill
     {% endfor %}
 
   <tfoot>
-    <td colspan="4"></td>
-    <td>{{total}}</td>
+    <td colspan="3">Total {{total}}$</td>
   </tfoot>
   </tbody>
 </table>

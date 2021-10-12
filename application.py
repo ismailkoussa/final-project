@@ -1,12 +1,11 @@
 import os
-
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
-
+from help import login_required
 
 # Configure application
 app = Flask(__name__)
@@ -32,8 +31,6 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///items.db")
 
-
-
 # Ensure responses aren't cached
 @app.after_request
 def after_request(response):
@@ -44,8 +41,15 @@ def after_request(response):
 
 
 #.....................................
+@app.route("/")
+@login_required
+def index():
+    item = db.execute(
+            "select * from item ")
 
+    return render_template("index.html",item=item)
 
+#........................................................
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
@@ -60,26 +64,27 @@ def register():
 
         # Ensure the username was submitted
         if not username:
-            return apology("must provide username", 400)
+            message = "must provide username"
+            return render_template("apology.html",message=message)
         # Ensure the username doesn't exists
         elif len(rows) != 0:
-            return apology("username already exists", 400)
+            message = "username already exists"
+            return render_template("apology.html",message=message)
 
         # Ensure password was submitted
         elif not password:
-            return apology("must provide password", 400)
+            message = "must provide password"
+            return render_template("apology.html",message=message)
 
         # Ensure confirmation password was submitted
         elif not request.form.get("confirmation"):
-            return apology("must provide a confirmation password", 400)
-
+            message = "must provide a confirmation password"
+            return render_template("apology.html",message=message)
         # Ensure passwords match
         elif not password == confirmation:
-            return apology("Incorrect confirmation", 400)
-
-
+            message = "Incorrect confirmation"
+            return render_template("apology.html",message=message)
         else:
-
             # Insert the new user
             db.execute(
                 "INSERT INTO users (username, password) VALUES (?, ?) ", username, password,
@@ -93,31 +98,31 @@ def register():
 
 #...................................
 
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
-
     # Forget any user_id
     session.clear()
-
+    
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
 
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("must provide username!!", 403)
+            message = "must provide username!!"
+            return render_template("apology.html",message=message)
 
         # Ensure password was submitted
         elif not request.form.get("password"):
-            return apology("must provide password", 403)
+            message = "must provide password"
+            return render_template("apology.html",message=message)
 
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
         # Ensure username exists and password is correct
-        if len(rows) != 1 or not password == confirmation:
-            return apology("invalid username and/or password.....", 403)
+        password = request.form.get("password")
+        username = request.form.get("username")
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
@@ -131,7 +136,6 @@ def login():
 
 #...........................................................
 
-
 @app.route("/logout")
 def logout():
     """Log user out"""
@@ -143,7 +147,6 @@ def logout():
     return redirect("/")
 #..........................................
 
-
 @app.route("/buy", methods=["GET", "POST"])
 
 def buy():
@@ -151,32 +154,49 @@ def buy():
     if request.method == "POST":
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
+        if not shares:
+            message = "must provide shares"
+            return render_template("apology.html",message=message)
         price = db.execute(
             "SELECT price FROM item WHERE name = ? ", symbol)
-
+        if len(price)==0:
+            message = "No such item %s.. "%(symbol)
+            return render_template("apology.html",message=message)
+        price = int(price[0]["price"])
 
         current = db.execute(
             "SELECT cash FROM users WHERE id = ? ", session["user_id"]
         )[0]["cash"]
+        shares = int(shares)
+        current = int(current)
+        value = int(shares) * price
 
-        value = shares * price
+        if current < value:
+            message = "no enough cash"
+            message = str(value)
+            return render_template("apology.html",message=message)
 
-        if current < (value):
-            return apology("no enough cash",400)
-        db.execute("insert into stock (user_id, item, quantity, price) values(?,?,?,?,?)",
-        session["user_id"],symbol,shares,value
-        )
-        db.execute(
-            "UPDATE users SET cash = cash - ? WHERE id = ?",
-            value,
-            session["user_id"],
-        )
+        quantity = 0
+        total = 0
+        stock = db.execute("SELECT * FROM stock WHERE user_id = ? and item = ?", session["user_id"] , symbol)
+        if len(stock) != 0:
+           db.execute("update stock set quantity = quantity + ?, price = price + ? where user_id = ? and item = ?",
+           shares, value, session["user_id"], symbol
+
+           )
+        else:
+            db.execute("insert into stock (user_id, item, quantity, price) values(?,?,?,?)",
+            session["user_id"],symbol,shares,value
+            )
+            db.execute(
+             "UPDATE users SET cash = cash - ? WHERE id = ?",
+             value,
+             session["user_id"],
+             )
         return redirect("/buy")
-
     else:
         return render_template("buy.html")
 #....................................................................
-
 
 @app.route("/bill")
 
@@ -185,5 +205,5 @@ def bill():
     stock = db.execute("SELECT * FROM stock WHERE user_id = ?", session["user_id"])
     for stockmin in stock:
         total += stockmin["price"]
-
     return render_template("bill.html", stock=stock,total=total)
+#.........................................................................................
