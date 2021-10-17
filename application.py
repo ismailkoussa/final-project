@@ -103,7 +103,7 @@ def login():
     """Log user in"""
     # Forget any user_id
     session.clear()
-    
+
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
 
@@ -116,15 +116,20 @@ def login():
         elif not request.form.get("password"):
             message = "must provide password"
             return render_template("apology.html",message=message)
-
-        # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-
         # Ensure username exists and password is correct
         password = request.form.get("password")
         username = request.form.get("username")
 
-        # Remember which user has logged in
+        # Query database for username
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        if len(rows)!=1:
+            message = "username unexists"
+            return render_template("apology.html",message=message)
+        elif rows[0]["password"] != password:
+            message = "Incorrect password"
+            return render_template("apology.html",message=message)
+
+     # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
 
         # Redirect user to home page
