@@ -155,26 +155,29 @@ def logout():
 @app.route("/buy", methods=["GET", "POST"])
 
 def buy():
-    """Buy shares of stock"""
+    """Buy amount of stock"""
     if request.method == "POST":
-        symbol = request.form.get("symbol")
-        shares = request.form.get("shares")
-        if not shares:
-            message = "must provide shares"
+        pname = request.form.get("pname")
+        amount = request.form.get("amount")
+        if not amount:
+            message = "must provide amount"
             return render_template("apology.html",message=message)
+        if int(amount) < 1:
+            message = "amount must be > 0"
+            return render_template("apology.html",message=message)    
         price = db.execute(
-            "SELECT price FROM item WHERE name = ? ", symbol)
+            "SELECT price FROM item WHERE name = ? ", pname)
         if len(price)==0:
-            message = "No such item %s.. "%(symbol)
+            message = "No such item %s.. "%(pname)
             return render_template("apology.html",message=message)
         price = int(price[0]["price"])
 
         current = db.execute(
             "SELECT cash FROM users WHERE id = ? ", session["user_id"]
         )[0]["cash"]
-        shares = int(shares)
+        amount = int(amount)
         current = int(current)
-        value = int(shares) * price
+        value = int(amount) * price
 
         if current < value:
             message = "no enough cash"
@@ -183,15 +186,15 @@ def buy():
 
         quantity = 0
         total = 0
-        stock = db.execute("SELECT * FROM stock WHERE user_id = ? and item = ?", session["user_id"] , symbol)
+        stock = db.execute("SELECT * FROM stock WHERE user_id = ? and item = ?", session["user_id"] , pname)
         if len(stock) != 0:
            db.execute("update stock set quantity = quantity + ?, price = price + ? where user_id = ? and item = ?",
-           shares, value, session["user_id"], symbol
+           amount, value, session["user_id"], pname
 
            )
         else:
             db.execute("insert into stock (user_id, item, quantity, price) values(?,?,?,?)",
-            session["user_id"],symbol,shares,value
+            session["user_id"],pname,amount,value
             )
             db.execute(
              "UPDATE users SET cash = cash - ? WHERE id = ?",

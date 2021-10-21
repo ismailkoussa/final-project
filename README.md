@@ -1,6 +1,7 @@
 # final-project
-Hi 
+Hi
 This is a website for a local beverage institution "Koussa". 
+                     *This project uses Flask*
 First, when you run the code on the top you'll be directed to login page
 
 ![project-1](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/project-1.PNG)
