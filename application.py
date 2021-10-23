@@ -158,6 +158,7 @@ def buy():
     """Buy amount of stock"""
     if request.method == "POST":
         pname = request.form.get("pname")
+        pname = pname.rstrip()
         amount = request.form.get("amount")
         if not amount:
             message = "must provide amount"
