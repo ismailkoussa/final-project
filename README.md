@@ -1,6 +1,6 @@
 # cs50 2021's final-project
 ## About website
-This is a website for a local beverage institution ==Koussa==.   
+This is a website for a local beverage institution **Koussa**.   
 It uses Flask's library   
 It contains a main page, a page for registering an account, another for login, another for buying items,    
 another for a bill, and the last for displaying error messages.   
