@@ -39,8 +39,8 @@ lets dive into that page!
 
 ### buy page
 When you open this page you'll see a form that contains 2 inputs and 2 buttons. The first input collects   
-the *product name* wich you want to buy, the second takes a number(integer) that represents the number of items.
-Next, there is a button **buy** that submits the form. You can submit it as much you want. In below of    
+the *product name* wich you want to buy, the second takes a number(integer) that represents the number of items.   
+Next, there is a button **buy** that submits the form. You can submit it as much you want. In below of  
 this button there another called *view bill* which directs you to **bill page**.
 
 ![project-3](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/project-3.PNG)
