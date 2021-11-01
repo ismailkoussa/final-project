@@ -50,7 +50,15 @@ In this page the bill is displayed in a table with 3 columns:
 * **name** *name of item you've buyed*
 * **Quantity** *number of items*
 * **price** *price of one piece multiplyed by Quantity*   
+<<<<<<< HEAD
+=======
+
+and finally under the page the total price of package is there.
+>>>>>>> a3d48a71892bdb00ba969881950b1b783670f9e7
 
 and finally under the page the total price of package is there.
 
+<<<<<<< HEAD
 ![project-5](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/project-5.PNG)
+=======
+>>>>>>> a3d48a71892bdb00ba969881950b1b783670f9e7
