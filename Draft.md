@@ -1,18 +1,25 @@
-[Make sure you have read Readme. md] 
-Hi everyone.
-In this blog, I will show you my moments by working on this project. As you see the website is
-simple and easy to use, I have faced some problems.
+# About project  
 
-first is the big number of errors in the "application.py" file, due to the inexperience in 
-Flask's library leads me to see "Internal server error" every time I run this project.
-Despite errors, I have fixed all of them and go ahead to face the second problem! The
-style of pages, it's the first time I make a project using Flask, so the pages must be
-designed in a way that won't lead to an incompatibility, so what is the solution?! The solution
-is to use bootstrap and make an abstract file for pages "main.html", which makes work easier.
-If you see the code you'll notice that my code is close to that of pset9 because the ideas
-are close too, the 'login, buy, index, register' pages are quite the same. The last problem 
-I have faced is the malfunction of the on/off button in my computer, which forced me to write this
-file using mobile. thank goodness the computer's on/off button works, and I'm editing this file using it.
+## How to run the project    
+This project uses Flask, which is a python library, 
+so make sure to install python and flask before you
+try to run this project, follow the link in below to
+install python and flask on both windows and linux   
 
-Finally, I want to say something: " if you have an error after running 100 times don't feel sad
-just google-it !" without google you'll do nothing.
+[install python](https://www.python.org/downloads/)    
+
+[learn how to install flask](https://phoenixnap.com/kb/install-flask)   
+
+## What makes this project beautiful   
+### Code is clear
+when you read the code you'll find everything clear, algorithms are   
+very simple, even I have used flask, but the code is written with   
+the basics of it.   
+
+### Idea is simple  
+This project is about a market website, so no worry about understating    
+the concept of it, and you can know the function of page from its name,  
+by example the page *buy* is for buying a package, *bill* for displaying   
+the bill, and so on.  
+
+
