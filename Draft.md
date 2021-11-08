@@ -29,7 +29,8 @@ As we know the products shown in the table are a part of our country identity,
 products don't use technology, so this project idea **"local baverege market"**    
 is a little new, and a way to give these products a life in the world shop.       
 
-## Problems I have faced during the work **to be continued**
+## Problems I have faced during the work    
+**to be continued**
 
 
 
