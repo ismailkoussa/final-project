@@ -30,7 +30,38 @@ products don't use technology, so this project idea **"local baverege market"**
 is a little new, and a way to give these products a life in the world shop.       
 
 ## Problems I have faced during the work    
-**to be continued**
+### Style   
+The style of pages, wasn't very good, I had to create a css style page     
+for every html page, as any beginner thinks, but no! work is easier     
+than that, all I had to do is to create an abstract page called "main",   
+in *templates* folder. Its not easy to explain how it works, you     
+can see its code and its *style* page and discover a new way of working   
+
+### Turn on/off button    
+Please don't laugh, because during work pressure, my computer on/off button    
+stoped working, that led me to wait many days wihtout coding untill I fixed it.     
+
+## What this project tought me   
+This project demontrates the importance of backend, no doubt that every   
+junior developper that only works with html,css,js knows about backend   
+but when a person uses it, he will loves it, its another world!, it makes    
+developping very easier, exactly by using **Flask** its like *backbones*      
+it connects all pages together by its variables in html pages and collects    
+the informations from forms and throws it in tables. In the image below    
+this peace of code shows how flask work with tables and variables.   
+
+![code-1](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/code-1.PNG)      
+
+This is another image showing the collection of informations from forms after submitting    
+and the error messages based on these informations :     
+
+![code-2](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/code-2.PNG)    
+
+## Finally     
+Every developper should continue learning and develop himself before developping pages    
+because every day there is a new trick that saves a lot of effort and code lines.    
+**Don't hesitate to comment on my project if you want to tell my anything!**
+
 
 
 
