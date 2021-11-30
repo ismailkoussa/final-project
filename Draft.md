@@ -8,7 +8,32 @@ install python and flask on both windows and linux
 
 [install python](https://www.python.org/downloads/)    
 
+![pythondownloadcapture](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/pythondownloadcapture.PNG)
+
+
 [learn how to install flask](https://phoenixnap.com/kb/install-flask)   
+
+![flaskdownloadcapture](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/flaskdownloadcapture.PNG)
+
+## Why I have chosen cs50   
+### Education  
+First, it's very important to say that I'm a Lebanese University student,     
+and when I was in the first year, the courses were very far from programming,   
+it's all about Physics and some unimportant mathematics, so I stood up and
+said, No!, I'll not pass this year without a real programming education, after   
+that, I asked my friend that is a programmer for some courses, and Cs50 was one   
+of them. I never regretted enrolling in this course, it's very useful, you'll be  
+shocked if you know that it contains more than 4 semesters of programming materials  
+in my university. take this example: no backend course in the first 4 semesters.
+
+![cs50capture](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/cs50capture.PNG)
+
+### samplest   
+Cs50 is very sample to learn from, the course is divided into weeks, and every  
+week contains a long video **lecture** and some other shorts **shorts**, so   
+the ideas have a straight way to enter your mind! then there are some problems   
+**lab** and **problem set**, that fix these ideas and teach you how to use them.
+
 
 ## What makes this project beautiful   
 ### Code is clear
@@ -41,7 +66,7 @@ can see its code and its *style* page and discover a new way of working.
 Please don't laugh, because during work pressure, my computer on/off button    
 stopped working, which led me to wait many days without coding until I fixed it.     
 
-## What this project tought me   
+## What this project taught me   
 This project demonstrates the importance of backend, no doubt that every   
 a junior developer that only works with HTML, CSS, js knows about backend   
 but when a person uses it, he will love it, its another world!, it makes    
