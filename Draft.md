@@ -20,7 +20,7 @@ install python and flask on both windows and linux
 First, it's very important to say that I'm a Lebanese University student,     
 and when I was in the first year, the courses were very far from programming,   
 it's all about Physics and some unimportant mathematics, so I stood up and
-said, No!, I'll not pass this year without a real programming education, after   
+said, No!, I'll not pass this year without a real programming education, after  
 that, I asked my friend that is a programmer for some courses, and Cs50 was one   
 of them. I never regretted enrolling in this course, it's very useful, you'll be  
 shocked if you know that it contains more than 4 semesters of programming materials  
