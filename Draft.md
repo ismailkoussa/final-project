@@ -1,10 +1,15 @@
 # About project  
+## About website
+This is a website for a local beverage institution **Koussa**.   
+It uses Flask's library   
+It contains a main page, a page for registering an account, another for login, another for buying items,    
+another for a bill, and the last for displaying error messages.  
 
 ## How to run the project    
-This project uses Flask, which is a python library, 
-so make sure to install python and flask before you
+This project uses Flask, which is a Python library, 
+so make sure to install Python and Flask before you
 try to run this project, follow the link in below to
-install python and flask on both windows and linux   
+install Python and Flask on both windows and linux   
 
 [install python](https://www.python.org/downloads/)    
 
@@ -20,7 +25,8 @@ install python and flask on both windows and linux
 First, it's very important to say that I'm a Lebanese University student,     
 and when I was in the first year, the courses were very far from programming,   
 it's all about Physics and some unimportant mathematics, so I stood up and
-said, No!, I'll not pass this year without a real programming education, after  
+said, No!,   
+I'll not pass this year without a real programming education, after  
 that, I asked my friend that is a programmer for some courses, and Cs50 was one   
 of them. I never regretted enrolling in this course, it's very useful, you'll be  
 shocked if you know that it contains more than 4 semesters of programming materials  
@@ -38,7 +44,7 @@ the ideas have a straight way to enter your mind! then there are some problems
 ## What makes this project beautiful   
 ### Code is clear
 when you read the code you'll find everything clear, algorithms are   
-very simple, even I have used flask, but the code is written with   
+very simple, even I have used Flask, but the code is written with   
 the basics of it. The best thing is that all html pages have an      
 abstract page called main.html, that makes the code more clear  
 
@@ -73,7 +79,7 @@ but when a person uses it, he will love it, its another world!, it makes
 developing very easier, exactly by using **Flask** it's like *backbones*      
 it connects all pages by its variables in HTML pages and collects    
 the information from forms and throws it in tables. In the image below    
-this piece of code shows how flask work with tables and variables.  
+this piece of code shows how Flask work with tables and variables.  
 
 ![code-1](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/code-1.PNG)      
 
@@ -81,6 +87,69 @@ This is another image showing the collection of informations from forms after su
 and the error messages based on these informations :     
 
 ![code-2](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/code-2.PNG)    
+
+
+## Have a look at the website   
+### login page   
+First, when you run the code on the top you'll be directed to login page
+
+![project-1](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/project-1.PNG)     
+
+as you see there is a form containing 2 inputs for *username* and *password*.    
+make sure to enter the informations correctly, otherwise an error message will    
+be displayed in a page that you'll be directed to: **apology**    
+
+### register page    
+If you don't have an account you can register one by clicking on *register* in the header as below:
+
+![project-4](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/project-4.PNG).
+
+when you register for a new account you'll be directed to login page again.    
+
+### index page
+After you login correctly you'll be directed to index page, this is the main page of the website,
+it contains a table that represents the products of the institution. 
+
+![project-2](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/project-2.PNG)
+
+The header of this page contains two links, one for the page itself and another for a page called "buy".
+lets dive into that page!   
+
+### buy page
+When you open this page you'll see a form that contains 2 inputs and 2 buttons. The first input collects   
+the *product name* wich you want to buy, the second takes a number(integer) that represents the number of items.   
+Next, there is a button **buy** that submits the form. You can submit it as much you want. In below of  
+this button there another called *view bill* which directs you to **bill page**.
+
+![project-3](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/project-3.PNG)
+
+### bill page
+In this page the bill is displayed in a table with 3 columns:  
+* **name** *name of item you've buyed*
+* **Quantity** *number of items*
+* **price** *price of one piece multiplyed by Quantity*   
+
+and finally under the page the total price of package is there.
+
+![project-5](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/project-5.PNG)
+
+### apology page  
+I will not show you all the error messages, I'll let   
+you know by running this project, but in the pictures  
+below there is some of them    
+
+If you enterd an unexist username     
+
+![apology-1](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/apology-1.PNG)  
+
+If you enterd an unexist product name   
+
+![apology-2](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/apology-2.PNG)  
+
+If you enterd an incorrect password   
+
+![apology-3](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/apology-3.PNG)
+
 
 ## Finally     
 Every developer should continue learning and developing himself before developing pages    

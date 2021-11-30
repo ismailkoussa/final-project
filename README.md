@@ -5,6 +5,21 @@ It uses Flask's library
 It contains a main page, a page for registering an account, another for login, another for buying items,    
 another for a bill, and the last for displaying error messages.   
 
+## How to run the project    
+This project uses Flask, which is a Python library, 
+so make sure to install Python and Flask before you
+try to run this project, follow the link in below to
+install Python and Flask on both windows and linux   
+
+[install python](https://www.python.org/downloads/)    
+
+![pythondownloadcapture](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/pythondownloadcapture.PNG)
+
+
+[learn how to install flask](https://phoenixnap.com/kb/install-flask)   
+
+![flaskdownloadcapture](https://github.com/ismailkoussa/final-project/blob/master/readme%20images/flaskdownloadcapture.PNG)
+
 ## About course  
 This course is like a door that you open to learn programming, it's divided to 10 weeks, every week contains a lecture,    
 about 2hrs, and maybe some shorts. To apply what you've learned there is 2 problems that you have to do them then    
